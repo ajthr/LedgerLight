@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LedgerLight"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="LedgerLight" 
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="720"
+        MinWidth="1360">
     <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32" />
+            <RowDefinition/>
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="85*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+
+                <TreeView>
+                    <TreeViewItem Header="Dashboard" Selected="SelectDashboardWindow" />
+                    <TreeViewItem Header="Transactions" IsExpanded="True">
+                        <TreeViewItem Header="Purchase" IsExpanded="True">
+                            <TreeViewItem Header="Purchase Invoice" Selected="SelectPurchaseInvoiceWindow" />
+                        </TreeViewItem>
+                    </TreeViewItem>
+                </TreeView>
+
+            </Grid>
+
+            <Grid Grid.Column="1" Name="gd_Main" />
+
+        </Grid>
 
     </Grid>
 </Window>
